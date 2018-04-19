@@ -1,0 +1,116 @@
+﻿body {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+
+#logo {
+    float: left;
+    height: 100%;
+    padding: 0;
+}
+
+#banner {
+    padding: 0;
+    float: left;
+    height: 100%;
+}
+
+#banner .carousel {
+    height:100%;
+}
+
+#banner .carousel .carousel-inner {
+    height: 100%;
+}
+
+.img-header {
+    height: 100%;
+    width: 100%;
+}
+
+#header {
+    height: 20vh;
+    background-image: url('../Images/ChoppingBoard2.gif');
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #header {
+        height: 8vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #header {
+        height: 10vh;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #header {
+        height: 12vh;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #header {
+        height: 20vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #navbar-padding {
+        padding-left: 30px;
+    }
+}
+
+.bg-custom {
+    background-color: #e62e00 !important;
+}
+
+.navbar-brand-custom {
+    color: black !important;
+}
+
+.navbar-brand-custom:hover {
+    color: white !important;
+}
+
+.navbar-collapse-custom a {
+    color: black !important;
+}
+
+.navbar-collapse-custom a:hover {
+    color: white !important;
+}
+
+.dropdown-custom {
+    background-color: #ff471a !important;
+}
+
+.dropdown-custom .dropdown-item {
+    color: black !important;
+}
+
+    .dropdown-custom .dropdown-item:hover {
+        color: black !important;
+        background-color: #ff9980;
+    }

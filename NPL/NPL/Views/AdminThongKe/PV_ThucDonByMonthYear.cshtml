@@ -1,0 +1,33 @@
+﻿@using NPL.Models
+@model List<V_ThongKeThucDon>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    Tên thực đơn
+                </th>
+                <th>
+                    Tổng số lượng
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (V_ThongKeThucDon td in Model)
+            {
+                <tr>
+                    <td>
+                        @td.TenThucDon
+                    </td>
+                    <td>
+                        @td.TongSoLuong
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+﻿@using NPL.Models
+@model List<ThucDon>
+
+<select id="dropdown_thucdon" class="form-control form-control-lg" name="IDThucDon">
+    @foreach (ThucDon item in Model)
+    {
+        if (item.IDThucDon == Convert.ToInt32(ViewBag.idThucDon))
+        {
+            <option value="@item.IDThucDon" selected>@item.TenThucDon</option>
+        }
+        else
+        {
+            <option value="@item.IDThucDon">@item.TenThucDon</option>
+        }
+    }
+</select>

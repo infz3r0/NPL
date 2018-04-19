@@ -1,0 +1,17 @@
+﻿@using NPL.Models
+@model List<MonAn>
+
+<select class="form-control form-control-lg" name="IDMonAn">
+    @foreach (MonAn item in Model)
+    {
+        if (item.IDMonAn == Convert.ToInt32(ViewBag.idMonAn))
+        {
+            <option value="@item.IDMonAn" selected>@item.TenMonAn</option>
+        }
+        else
+        {
+            <option value="@item.IDMonAn">@item.TenMonAn</option>
+        }
+    }
+</select>
+
