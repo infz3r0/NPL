@@ -176,6 +176,14 @@ namespace NPL.Models
 				return this.GetTable<V_ThongKeUser>();
 			}
 		}
+		
+		public System.Data.Linq.Table<V_ThongKeDoanhThu> V_ThongKeDoanhThus
+		{
+			get
+			{
+				return this.GetTable<V_ThongKeDoanhThu>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
@@ -2190,6 +2198,87 @@ namespace NPL.Models
 				if ((this._TongThucDon != value))
 				{
 					this._TongThucDon = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_ThongKeDoanhThu")]
+	public partial class V_ThongKeDoanhThu
+	{
+		
+		private System.Nullable<int> _Thang;
+		
+		private System.Nullable<int> _Nam;
+		
+		private System.Nullable<int> _TongSoDonDatHang;
+		
+		private System.Nullable<decimal> _TongDoanhThu;
+		
+		public V_ThongKeDoanhThu()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thang", DbType="Int")]
+		public System.Nullable<int> Thang
+		{
+			get
+			{
+				return this._Thang;
+			}
+			set
+			{
+				if ((this._Thang != value))
+				{
+					this._Thang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nam", DbType="Int")]
+		public System.Nullable<int> Nam
+		{
+			get
+			{
+				return this._Nam;
+			}
+			set
+			{
+				if ((this._Nam != value))
+				{
+					this._Nam = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongSoDonDatHang", DbType="Int")]
+		public System.Nullable<int> TongSoDonDatHang
+		{
+			get
+			{
+				return this._TongSoDonDatHang;
+			}
+			set
+			{
+				if ((this._TongSoDonDatHang != value))
+				{
+					this._TongSoDonDatHang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongDoanhThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongDoanhThu
+		{
+			get
+			{
+				return this._TongDoanhThu;
+			}
+			set
+			{
+				if ((this._TongDoanhThu != value))
+				{
+					this._TongDoanhThu = value;
 				}
 			}
 		}

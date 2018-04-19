@@ -313,6 +313,8 @@
     <Content Include="Views\AdminThongKe\PV_ThongKeUser.cshtml" />
     <Content Include="Views\AdminThongKe\TaiKhoan.cshtml" />
     <Content Include="Views\AdminThongKe\PV_TaiKhoanByMonthYear.cshtml" />
+    <Content Include="Views\AdminThongKe\PV_ThongKeDoanhThu.cshtml" />
+    <Content Include="Views\AdminThongKe\DoanhThu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
