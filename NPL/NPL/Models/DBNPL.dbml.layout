@@ -44,21 +44,21 @@
         <elementListCompartment Id="8bcae343-f77c-4244-9fc6-9144eee2c192" absoluteBounds="6.265, 7.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.59375 : 3.5); (10.59375 : 0.90625); (11.75 : 0.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.96875 : 3.5); (10.96875 : 0.78125); (11.75 : 0.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBNPLDataContext/ThucDon/ThucDon_ChiTietDatHang" />
       <nodes>
         <classShapeMoniker Id="8910c0c1-050d-4537-b809-885deaa97bc5" />
         <classShapeMoniker Id="36cad822-2daa-4850-9107-417c9a1a3fbb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 7); (11.375 : 6.625); (11.375 : 1.82097245898437); (11.75 : 1.82097245898437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11 : 7); (11.375 : 6.625); (11.375 : 1.49002397265625); (11.75 : 1.49002397265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBNPLDataContext/DatHang/DatHang_ChiTietDatHang" />
       <nodes>
         <classShapeMoniker Id="41add15a-716d-40a7-9cd8-fcf88cc9cb3f" />
         <classShapeMoniker Id="36cad822-2daa-4850-9107-417c9a1a3fbb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 4.47199625651042); (11.75 : 4.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11 : 4.47199625651042); (11.2916666666667 : 4.47199625651042 : JumpStart); (11.4583333333333 : 4.47199625651042 : JumpEnd); (11.75 : 4.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBNPLDataContext/ThucDon/ThucDon_KhuyenMai" />
       <nodes>
         <classShapeMoniker Id="8910c0c1-050d-4537-b809-885deaa97bc5" />
@@ -121,6 +121,12 @@
       <DataClassMoniker Name="/DBNPLDataContext/V_ThongKeDoanhThu" />
       <nestedChildShapes>
         <elementListCompartment Id="921a3820-5413-4e32-8a8b-41f6b171e873" absoluteBounds="6.0150000000000006, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b82fb4c-2afc-4629-a8f4-b16f1545ca74" absoluteBounds="8.875, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DBNPLDataContext/CaiDat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="224c40d0-f74d-4a0a-80ed-251f2ec67af7" absoluteBounds="8.89, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

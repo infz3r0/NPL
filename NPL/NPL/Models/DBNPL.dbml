@@ -118,4 +118,16 @@
       <Column Name="TongDoanhThu" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CaiDat" Member="CaiDats">
+    <Type Name="CaiDat">
+      <Column Name="TenThamSo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GiaTri" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HienThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.p_UpdateCaiDat" Method="p_UpdateCaiDat">
+    <Parameter Name="TenThamSo" Parameter="tenThamSo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GiaTri" Parameter="giaTri" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

@@ -150,6 +150,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\AdminCaiDatController.cs" />
     <Compile Include="Controllers\AdminKhuyenMaiController.cs" />
     <Compile Include="Controllers\AdminLoaiController.cs" />
     <Compile Include="Controllers\AdminThongKeController.cs" />
@@ -315,6 +316,7 @@
     <Content Include="Views\AdminThongKe\PV_TaiKhoanByMonthYear.cshtml" />
     <Content Include="Views\AdminThongKe\PV_ThongKeDoanhThu.cshtml" />
     <Content Include="Views\AdminThongKe\DoanhThu.cshtml" />
+    <Content Include="Views\AdminCaiDat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

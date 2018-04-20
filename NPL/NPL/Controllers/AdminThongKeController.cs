@@ -38,8 +38,8 @@ namespace NPL.Controllers
             ViewBag.Month = month;
             ViewBag.Year = year;
 
-
-            int take = 5;
+            CaiDat config = data.CaiDats.SingleOrDefault(i => i.TenThamSo.Equals("top_thuc_don_take"));
+            int take = Convert.ToInt32(config.GiaTri);
             ViewBag.Take = take;
 
             List<V_ThongKeThucDon> all = data.V_ThongKeThucDons.Where(i => i.Thang == month && i.Nam == year).OrderByDescending(i => i.TongSoLuong).Take(take).ToList();
@@ -154,7 +154,7 @@ namespace NPL.Controllers
         }
 
         #endregion
-
+        #region DoanhThu
         public ActionResult DoanhThu(int? page)
         {
             List<V_ThongKeDoanhThu> distinct = data.V_ThongKeDoanhThus.ToList();
@@ -214,6 +214,7 @@ namespace NPL.Controllers
 
             return PartialView(all);
         }
+        #endregion
 
     }
 }

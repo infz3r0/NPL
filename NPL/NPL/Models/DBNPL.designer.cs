@@ -184,6 +184,21 @@ namespace NPL.Models
 				return this.GetTable<V_ThongKeDoanhThu>();
 			}
 		}
+		
+		public System.Data.Linq.Table<CaiDat> CaiDats
+		{
+			get
+			{
+				return this.GetTable<CaiDat>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_UpdateCaiDat")]
+		public int p_UpdateCaiDat([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenThamSo", DbType="VarChar(50)")] string tenThamSo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GiaTri", DbType="NVarChar(100)")] string giaTri)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenThamSo, giaTri);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
@@ -2279,6 +2294,69 @@ namespace NPL.Models
 				if ((this._TongDoanhThu != value))
 				{
 					this._TongDoanhThu = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CaiDat")]
+	public partial class CaiDat
+	{
+		
+		private string _TenThamSo;
+		
+		private string _GiaTri;
+		
+		private string _HienThi;
+		
+		public CaiDat()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenThamSo", DbType="VarChar(50)")]
+		public string TenThamSo
+		{
+			get
+			{
+				return this._TenThamSo;
+			}
+			set
+			{
+				if ((this._TenThamSo != value))
+				{
+					this._TenThamSo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTri", DbType="NVarChar(100)")]
+		public string GiaTri
+		{
+			get
+			{
+				return this._GiaTri;
+			}
+			set
+			{
+				if ((this._GiaTri != value))
+				{
+					this._GiaTri = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HienThi", DbType="NVarChar(50)")]
+		public string HienThi
+		{
+			get
+			{
+				return this._HienThi;
+			}
+			set
+			{
+				if ((this._HienThi != value))
+				{
+					this._HienThi = value;
 				}
 			}
 		}
