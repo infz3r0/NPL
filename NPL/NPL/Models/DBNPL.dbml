@@ -120,7 +120,7 @@
   </Table>
   <Table Name="dbo.LogLogin" Member="LogLogins">
     <Type Name="LogLogin">
-      <Column Name="IDLog" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLog" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="LoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="Admin_LogLogin" Member="Admin" ThisKey="Username" OtherKey="Username" Type="Admin" IsForeignKey="true" />
@@ -129,7 +129,6 @@
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Association Name="Admin_LogLogin" Member="LogLogins" ThisKey="Username" OtherKey="Username" Type="LogLogin" />
     </Type>

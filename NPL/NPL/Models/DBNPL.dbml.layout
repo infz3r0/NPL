@@ -123,23 +123,23 @@
         <elementListCompartment Id="224c40d0-f74d-4a0a-80ed-251f2ec67af7" absoluteBounds="2.8900000000000006, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0f278fcd-4acd-4594-8b1b-c3cbd47d535d" isExpanded="false" absoluteBounds="0.5, 5.375, 2, 0.45">
+    <classShape Id="78e9f62f-9e5d-4ce2-8939-1387980cc542" isExpanded="false" absoluteBounds="0.5, 5.25, 2, 0.45">
       <DataClassMoniker Name="/DBNPLDataContext/LogLogin" />
       <nestedChildShapes>
-        <elementListCompartment Id="cdc9c477-b322-4181-a74a-a5cbf8a593f8" absoluteBounds="0.51499999999999968, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dac20bb3-fb89-4243-860a-85aadd68146f" absoluteBounds="0.51500000000000012, 5.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="34963e9c-db06-4d81-8190-a5b875541bf1" isExpanded="false" absoluteBounds="0.5, 4.5, 2, 0.45">
+    <classShape Id="4c19c152-4bc8-43d1-a91a-cd02e94f4285" isExpanded="false" absoluteBounds="0.5, 4.5, 2, 0.45">
       <DataClassMoniker Name="/DBNPLDataContext/Admin" />
       <nestedChildShapes>
-        <elementListCompartment Id="a70f21bd-e066-42a9-a084-404f4525031c" absoluteBounds="0.51500000000000012, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77b47f47-47ea-4820-a3d0-034a157b5bbf" absoluteBounds="0.51500000000000012, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.5 : 4.95); (1.5 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.5 : 4.95); (1.5 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBNPLDataContext/Admin/Admin_LogLogin" />
       <nodes>
-        <classShapeMoniker Id="34963e9c-db06-4d81-8190-a5b875541bf1" />
-        <classShapeMoniker Id="0f278fcd-4acd-4594-8b1b-c3cbd47d535d" />
+        <classShapeMoniker Id="4c19c152-4bc8-43d1-a91a-cd02e94f4285" />
+        <classShapeMoniker Id="78e9f62f-9e5d-4ce2-8939-1387980cc542" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

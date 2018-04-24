@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NPL.Models;
+using PagedList;
 
 namespace NPL.Controllers
 {
@@ -43,7 +44,6 @@ namespace NPL.Controllers
                 r = new Admin();
                 r.Username = "Secret";
                 r.Password = "******";
-                r.LastLogin = null;
                 Session["Account"] = r;
                 Session["Role"] = "Admin";
                 return RedirectToAction("Index");
@@ -63,8 +63,12 @@ namespace NPL.Controllers
             Session["Account"] = r;
             Session["Role"] = "Admin";
 
-            r.LastLogin = DateTime.Now;
-            UpdateModel(r);
+            DateTime now = DateTime.Now;            
+
+            LogLogin log = new LogLogin();
+            log.Username = r.Username;
+            log.LoginTime = now;
+            data.LogLogins.InsertOnSubmit(log);
             data.SubmitChanges();
 
             return RedirectToAction("Index");
@@ -96,6 +100,11 @@ namespace NPL.Controllers
         [HttpPost]
         public ActionResult ChangePassword(FormCollection form)
         {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login");
+            }
+
             string oldpass = form["OldPassword"];
             string newpass = form["NewPassword"];
             string repass = form["RetypePassword"];
@@ -129,5 +138,21 @@ namespace NPL.Controllers
             ViewBag.MessageSuccess = "Đổi mật khẩu thành công.";
             return View();
         }
+
+        public ActionResult Logs(int? page)
+        {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login");
+            }
+
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+
+            List<LogLogin> all = data.LogLogins.OrderByDescending(i => i.LoginTime).ToList();
+            return View(all.ToPagedList(pageNumber, pageSize));
+        }
+
+        //end class
     }
 }

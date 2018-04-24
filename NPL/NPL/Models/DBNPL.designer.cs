@@ -2302,7 +2302,7 @@ namespace NPL.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDLog", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDLog", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int IDLog
 		{
 			get
@@ -2429,8 +2429,6 @@ namespace NPL.Models
 		
 		private string _Username;
 		
-		private System.Nullable<System.DateTime> _LastLogin;
-		
 		private string _Password;
 		
 		private EntitySet<LogLogin> _LogLogins;
@@ -2441,8 +2439,6 @@ namespace NPL.Models
     partial void OnCreated();
     partial void OnUsernameChanging(string value);
     partial void OnUsernameChanged();
-    partial void OnLastLoginChanging(System.Nullable<System.DateTime> value);
-    partial void OnLastLoginChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
     #endregion
@@ -2469,26 +2465,6 @@ namespace NPL.Models
 					this._Username = value;
 					this.SendPropertyChanged("Username");
 					this.OnUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastLogin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastLogin
-		{
-			get
-			{
-				return this._LastLogin;
-			}
-			set
-			{
-				if ((this._LastLogin != value))
-				{
-					this.OnLastLoginChanging(value);
-					this.SendPropertyChanging();
-					this._LastLogin = value;
-					this.SendPropertyChanged("LastLogin");
-					this.OnLastLoginChanged();
 				}
 			}
 		}
