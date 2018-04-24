@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NPL" Class="DBNPLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=NPL;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NPLConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Admin" Member="Admins">
-    <Type Name="Admin">
-      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ThucDon" Member="ThucDons">
     <Type Name="ThucDon">
       <Column Name="IDThucDon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -125,9 +118,30 @@
       <Column Name="HienThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LogLogin" Member="LogLogins">
+    <Type Name="LogLogin">
+      <Column Name="IDLog" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Admin_LogLogin" Member="Admin" ThisKey="Username" OtherKey="Username" Type="Admin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Association Name="Admin_LogLogin" Member="LogLogins" ThisKey="Username" OtherKey="Username" Type="LogLogin" />
+    </Type>
+  </Table>
   <Function Name="dbo.p_UpdateCaiDat" Method="p_UpdateCaiDat">
     <Parameter Name="TenThamSo" Parameter="tenThamSo" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="GiaTri" Parameter="giaTri" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_ChangePassword" Method="p_ChangePassword">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(40)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

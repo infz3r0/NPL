@@ -35,7 +35,8 @@ namespace NPL
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/style_user.css",
-                      "~/Content/PagedList.css"));
+                      "~/Content/PagedList.css",
+                      "~/Content/styleAdmin.css"));
         }
     }
 }

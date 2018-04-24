@@ -164,6 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MD5Cal.cs" />
     <Compile Include="Models\DBNPL.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +181,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\styleAdmin.css" />
     <Content Include="Content\style_user.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -317,6 +319,8 @@
     <Content Include="Views\AdminThongKe\PV_ThongKeDoanhThu.cshtml" />
     <Content Include="Views\AdminThongKe\DoanhThu.cshtml" />
     <Content Include="Views\AdminCaiDat\Index.cshtml" />
+    <Content Include="Views\Admin\PV_Account.cshtml" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

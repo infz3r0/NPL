@@ -14,12 +14,22 @@ namespace NPL.Controllers
                 
         public ActionResult Index()
         {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
             return View();
         }
 
         #region ThucDon
         public ActionResult ThucDon(int? page)
         {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
             List<MonthYear> distinct = data.V_ThongKeThucDons.Select(i => new MonthYear((int)i.Thang, (int)i.Nam)).Distinct().ToList();
             distinct.Reverse();
 
@@ -88,6 +98,11 @@ namespace NPL.Controllers
         #region User
         public ActionResult TaiKhoan(int? page)
         {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
             List<MonthYear> distinct = data.V_ThongKeUsers.Select(i => new MonthYear((int)i.Thang, (int)i.Nam)).Distinct().ToList();
             distinct.Reverse();
 
@@ -107,7 +122,8 @@ namespace NPL.Controllers
             ViewBag.Month = month;
             ViewBag.Year = year;
 
-            int take = 5;
+            CaiDat config = data.CaiDats.SingleOrDefault(i => i.TenThamSo.Equals("top_tai_khoan_take"));
+            int take = Convert.ToInt32(config.GiaTri);
             ViewBag.Take = take;
 
             List<V_ThongKeUser> all = data.V_ThongKeUsers.Where(i => i.Thang == month && i.Nam == year).OrderByDescending(i => i.TongThanhTien).Take(take).ToList();
@@ -157,6 +173,11 @@ namespace NPL.Controllers
         #region DoanhThu
         public ActionResult DoanhThu(int? page)
         {
+            if (!Manager.LoggedAsAdmin())
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
             List<V_ThongKeDoanhThu> distinct = data.V_ThongKeDoanhThus.ToList();
             distinct.Reverse();
 

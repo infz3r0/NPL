@@ -77,10 +77,52 @@ namespace NPL.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        [ChildActionOnly]
+        public ActionResult PV_Account()
+        {
+            return PartialView();
+        }
 
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult ChangePassword(FormCollection form)
+        {
+            string oldpass = form["OldPassword"];
+            string newpass = form["NewPassword"];
+            string repass = form["RetypePassword"];
 
+            Admin admin = data.Admins.SingleOrDefault(i=>i.Username.Equals("Admin"));
+            string dbpasshash = admin.Password;
 
+            if (!MD5Cal.VerifyMd5Hash(oldpass, dbpasshash))
+            {
+                ViewBag.MessageError = "Mật khẩu cũ không đúng.";
+                return View();
+            }
+
+            if (!newpass.Equals(repass))
+            {
+                ViewBag.MessageError = "Mật khẩu mới không trùng khớp.";
+                return View();
+            }
+
+            string hash = MD5Cal.GetMd5Hash(newpass);
+            try
+            {
+                data.p_ChangePassword("admin", hash);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MessageError = ex.ToString();
+                return View();
+            }
+
+            ViewBag.MessageSuccess = "Đổi mật khẩu thành công.";
+            return View();
+        }
     }
 }
