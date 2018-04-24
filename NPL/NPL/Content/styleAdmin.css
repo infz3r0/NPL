@@ -66,6 +66,7 @@
 .btn-dropdown-custom {
     background-color: #343a40 !important;
     border: none;
+    text-align: left;
 }
 
     .btn-dropdown-custom:hover {
