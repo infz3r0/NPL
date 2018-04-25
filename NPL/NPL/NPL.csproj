@@ -190,17 +190,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\MonAn\burger.jpg" />
-    <Content Include="Images\apple-logo_318-40184.jpg" />
-    <Content Include="Images\Ảnh1.png" />
-    <Content Include="Images\Ảnh2.png" />
-    <Content Include="Images\Ảnh3.png" />
-    <Content Include="Images\Ảnh4.png" />
-    <Content Include="Images\bannerfood.png" />
+    <Content Include="Images\LogoBanner\Ảnh1.png" />
+    <Content Include="Images\LogoBanner\Ảnh2.png" />
+    <Content Include="Images\LogoBanner\Ảnh3.png" />
+    <Content Include="Images\LogoBanner\Ảnh4.png" />
     <Content Include="Images\ChoppingBoard2.gif" />
-    <Content Include="Images\coca.png" />
     <Content Include="Images\header.jpg" />
-    <Content Include="Images\logo-banner-design.jpg" />
-    <Content Include="Images\pacman.png" />
     <Content Include="Scripts\bootstrap-confirmation.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -321,6 +316,7 @@
     <Content Include="Views\AdminCaiDat\Index.cshtml" />
     <Content Include="Views\Admin\ChangePassword.cshtml" />
     <Content Include="Views\Admin\Logs.cshtml" />
+    <Content Include="Views\AdminCaiDat\PV_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

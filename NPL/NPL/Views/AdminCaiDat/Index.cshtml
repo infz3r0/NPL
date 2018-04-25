@@ -8,7 +8,7 @@
 
 <h2 class="text-center">@ViewBag.Title</h2>
 
-@using (Html.BeginForm("ApplyConfig", "AdminCaiDat", FormMethod.Post))
+@using (Html.BeginForm("ApplyConfig", "AdminCaiDat", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -20,7 +20,18 @@
         <div class="form-group row">
             @Html.Label(c.HienThi, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
-                <input type="text" class="form-control" name="@c.TenThamSo" value="@c.GiaTri" required />
+                @if (c.TenThamSo.Contains("hinh"))
+                {
+                    <input type="hidden" name="@c.TenThamSo" value="@c.GiaTri" />
+                    <input type="file" name="fileUpload"  class="form-control-file" />
+                    <div>
+                        <img src="@Url.Content("~/Images/LogoBanner/" + c.GiaTri)" style="width:auto; height:20vh" />
+                    </div>
+                }
+                else
+                {
+                    <input type="text" class="form-control" name="@c.TenThamSo" value="@c.GiaTri" required />
+                }
             </div>
 
         </div>
