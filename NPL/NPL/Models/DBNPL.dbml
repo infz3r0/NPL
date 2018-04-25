@@ -41,18 +41,6 @@
       <Association Name="ThucDon_KhuyenMai" Member="ThucDon" ThisKey="IDThucDon" OtherKey="IDThucDon" Type="ThucDon" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MonAn" Member="MonAns">
-    <Type Name="MonAn">
-      <Column Name="IDMonAn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenMonAn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GioiThieu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="HinhAnh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PhiVanChuyen" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
-      <Column Name="IDLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="MonAn_ThucDon" Member="ThucDons" ThisKey="IDMonAn" OtherKey="IDMonAn" Type="ThucDon" />
-      <Association Name="Loai_MonAn" Member="Loai" ThisKey="IDLoai" OtherKey="IDLoai" Type="Loai" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
     <Type Name="TaiKhoan">
       <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -131,6 +119,18 @@
       <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Association Name="Admin_LogLogin" Member="LogLogins" ThisKey="Username" OtherKey="Username" Type="LogLogin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonAn" Member="MonAns">
+    <Type Name="MonAn">
+      <Column Name="IDMonAn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenMonAn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhiVanChuyen" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="IDLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GioiThieu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="MonAn_ThucDon" Member="ThucDons" ThisKey="IDMonAn" OtherKey="IDMonAn" Type="ThucDon" />
+      <Association Name="Loai_MonAn" Member="Loai" ThisKey="IDLoai" OtherKey="IDLoai" Type="Loai" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.p_UpdateCaiDat" Method="p_UpdateCaiDat">

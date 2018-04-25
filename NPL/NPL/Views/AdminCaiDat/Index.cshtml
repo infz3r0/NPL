@@ -23,7 +23,7 @@
                 @if (c.TenThamSo.Contains("hinh"))
                 {
                     <input type="hidden" name="@c.TenThamSo" value="@c.GiaTri" />
-                    <input type="file" name="fileUpload"  class="form-control-file" />
+                    <input type="file" name="fileUpload"  class="form-control-file" accept="image/*" />
                     <div>
                         <img src="@Url.Content("~/Images/LogoBanner/" + c.GiaTri)" style="width:auto; height:20vh" />
                     </div>
