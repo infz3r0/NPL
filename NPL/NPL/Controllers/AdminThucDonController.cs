@@ -171,7 +171,7 @@ namespace NPL.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(FormCollection form)
+        public ActionResult Delete(FormCollection form, int? page)
         {
             int id = Convert.ToInt32(form["id"]);
             ThucDon thucDon = data.ThucDons.SingleOrDefault(i => i.IDThucDon == id);
@@ -198,8 +198,10 @@ namespace NPL.Controllers
                         {
                             ViewBag.ErrorBody = ex.ToString();
                         }
+                        int pageSize = 10;
+                        int pageNumber = (page ?? 1);
                         List<ThucDon> all = data.ThucDons.ToList();
-                        return View("Index", all);
+                        return View("Index", all.ToPagedList(pageNumber, pageSize));
                     }
                 }
             }

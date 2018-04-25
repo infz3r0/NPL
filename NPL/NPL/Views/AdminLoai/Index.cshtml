@@ -74,7 +74,7 @@
                 <p>Bạn có chắc chắn muốn xóa @ViewBag.Name này?</p>
             </div>
             <div class="modal-footer">
-                @using (Html.BeginForm("Delete", "AdminLoai", FormMethod.Post))
+                @using (Html.BeginForm("Delete", "AdminLoai", new { page = Request.Params["page"] }, FormMethod.Post))
                 {
                     <input type="hidden" name="id" id="deleteID" value="" />
                     <input type="submit" class="btn btn-danger btn-ok" value="Đồng ý xóa" />

@@ -115,7 +115,7 @@ namespace NPL.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(FormCollection form)
+        public ActionResult Delete(FormCollection form, int? page)
         {
             int id = Convert.ToInt32(form["id"]);
             Loai loai = data.Loais.SingleOrDefault(i => i.IDLoai == id);
@@ -142,8 +142,10 @@ namespace NPL.Controllers
                         {
                             ViewBag.ErrorBody = ex.ToString();
                         }
+                        int pageSize = 10;
+                        int pageNumber = (page ?? 1);
                         List<Loai> all = data.Loais.ToList();
-                        return View("Index", all);
+                        return View("Index", all.ToPagedList(pageNumber, pageSize));
                     }
                 }
             }

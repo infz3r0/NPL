@@ -41,6 +41,7 @@
                     Món ăn
                 </th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -61,6 +62,9 @@
                     </td>
                     <td class="cell-center-middle">
                         @Html.DisplayFor(modelItem => item.MonAn.TenMonAn)
+                    </td>
+                    <td class="cell-center-middle">
+                        @Html.DisplayFor(modelItem => item.MonAn.PhiVanChuyen)
                     </td>
                     <td style="vertical-align:middle">
                         @Html.ActionLink("Sửa", "Edit", new { id = item.IDThucDon }, new { @class = "btn btn-outline-secondary" })
@@ -86,7 +90,7 @@
                 <p>Bạn có chắc chắn muốn xóa @ViewBag.Name này?</p>
             </div>
             <div class="modal-footer">
-                @using (Html.BeginForm("Delete", "AdminThucDon", FormMethod.Post))
+                @using (Html.BeginForm("Delete", "AdminThucDon", new { page = Request.Params["page"] }, FormMethod.Post))
                 {
                     <input type="hidden" name="id" id="deleteID" value="" />
                     <input type="submit" class="btn btn-danger btn-ok" value="Đồng ý xóa" />
