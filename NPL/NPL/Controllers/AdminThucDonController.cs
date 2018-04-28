@@ -18,7 +18,7 @@ namespace NPL.Controllers
             if (!Manager.LoggedAsAdmin())
             {
                 return RedirectToAction("Login", "Admin");
-            }
+            }            
 
             List<ThucDon> all = data.ThucDons.ToList();
 
@@ -64,6 +64,13 @@ namespace NPL.Controllers
             {
                 if (HinhAnh.ContentLength > 0)
                 {
+                    string _folderPath = Path.Combine(Server.MapPath("~/Images/MonAn/"));
+                    // Determine whether the directory exists.
+                    if (!Directory.Exists(_folderPath))
+                    {
+                        DirectoryInfo di = Directory.CreateDirectory(_folderPath);
+                    }
+
                     _FileName = Path.GetFileName(HinhAnh.FileName);
                     string _path = Path.Combine(Server.MapPath("~/Images/ThucDon/"), _FileName);
                     if (!System.IO.File.Exists(_path))
