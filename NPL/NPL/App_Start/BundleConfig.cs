@@ -31,10 +31,25 @@ namespace NPL
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/otherscript").Include(
+                      "~/Scripts/shared/superfish.js",
+                      "~/Scripts/shared/jquery.scrolltotop.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
+                      "~/Content/style.css",
+                      "~/Content/etalage.css",
                       "~/Content/style_user.css",
+                      "~/Content/PagedList.css",
+                      "~/Content/styleAdmin.css",
+                      "~/Content/shared/bootstrap-responsive.min.css",
+                      "~/Content/shared/bootstrappage.css",
+                      "~/Content/shared/main.css",
+                      "~/Content/shared/flexslider.css"));
+
+            bundles.Add(new StyleBundle("~/Content/admincss").Include(
+                      "~/Content/bootstrap.css",
                       "~/Content/PagedList.css",
                       "~/Content/styleAdmin.css"));
         }

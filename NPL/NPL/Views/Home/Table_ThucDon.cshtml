@@ -1,0 +1,39 @@
+﻿@using NPL.Models
+@model List<NPL.Models.ThucDon>
+
+<div class="box-thucdon">
+    @foreach (ThucDon t in Model)
+    {
+
+        <div class="row box-thucdon-item">
+            <div class="col-md-2 col-sm-2">
+                <div class="img-thucdon">
+                    <img src="@Url.Content("~/Images/ThucDon/" + t.HinhAnh)" style="max-width:100%; height:auto" />
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-10" style="padding-top:1vh;">
+                <div class="thucdon-left">
+                    <div class="thucdon-name">
+                        @t.TenThucDon
+                    </div>
+                </div>
+                <div class="thucdon-right">
+                    <div class="thucdon-price">
+                        <div class="old-price">
+                            @string.Format("{0:0,0}đ", t.DonGia)
+                        </div>
+                        <div class="new-price">
+                            @string.Format("{0:0,0}đ", t.DonGia)
+                        </div>
+                    </div>
+                    <div class="button-add">
+                        <a href="@Url.Action("ThemGiohang", "GioHang", new { iIDThucDon = t.IDThucDon, strURL = Request.Url})" class="btn btn-danger">
+                            <span style="font-weight:bold">+</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

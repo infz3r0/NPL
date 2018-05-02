@@ -60,6 +60,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -155,12 +156,15 @@
     <Compile Include="Controllers\AdminLoaiController.cs" />
     <Compile Include="Controllers\AdminThongKeController.cs" />
     <Compile Include="Controllers\AdminThucDonController.cs" />
-    <Compile Include="Controllers\Manager.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminNhomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminMonAnController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBNPL.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="MonthYear.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -180,7 +185,18 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\etalage.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\shared\bootstrap-responsive.css" />
+    <Content Include="Content\shared\bootstrap-responsive.min.css" />
+    <Content Include="Content\shared\bootstrap.css" />
+    <Content Include="Content\shared\bootstrap.min.css" />
+    <Content Include="Content\shared\bootstrappage.css" />
+    <Content Include="Content\shared\flexslider.css" />
+    <Content Include="Content\shared\jquery.fancybox.css" />
+    <Content Include="Content\shared\main.css" />
+    <Content Include="Content\shared\style.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\styleAdmin.css" />
     <Content Include="Content\style_user.css" />
     <Content Include="favicon.ico" />
@@ -189,6 +205,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\698627-icon-111-search-512.png" />
+    <Content Include="Images\8656f237f48b241.jpg" />
+    <Content Include="Images\gotop.png" />
+    <Content Include="Images\line_bar.png" />
     <Content Include="Images\MonAn\burger.jpg" />
     <Content Include="Images\LogoBanner\Ảnh1.png" />
     <Content Include="Images\LogoBanner\Ảnh2.png" />
@@ -238,6 +258,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.etalage.min.js" />
+    <Content Include="Scripts\jquery.flexisel.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -249,6 +271,12 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Shared\common.js" />
+    <Content Include="Scripts\Shared\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\Shared\jquery.fancybox.js" />
+    <Content Include="Scripts\Shared\jquery.flexslider-min.js" />
+    <Content Include="Scripts\Shared\jquery.scrolltotop.js" />
+    <Content Include="Scripts\Shared\superfish.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -317,6 +345,19 @@
     <Content Include="Views\Admin\ChangePassword.cshtml" />
     <Content Include="Views\Admin\Logs.cshtml" />
     <Content Include="Views\AdminCaiDat\PV_Header.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GiohangPartial.cshtml" />
+    <Content Include="Views\GioHang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Table_ThucDon.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\NguoiDung\DoiMatKhau.cshtml" />
+    <Content Include="Views\NguoiDung\HienTenDN.cshtml" />
+    <Content Include="Views\NguoiDung\TaiKhoan.cshtml" />
+    <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\Home\MonAnTheoLoai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

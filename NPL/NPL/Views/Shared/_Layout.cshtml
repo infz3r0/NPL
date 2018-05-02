@@ -3,16 +3,45 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - NPL</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Action("PV_Header", "AdminCaiDat")
+    <header>
+        <div id="header">
+            <div id="logo" class="col-2">
+                <img src="~/Images/Ảnh1.png" class="img-header" />
+            </div>
+            <div id="banner" class="col-10">
+
+                <div id="demo" class="carousel slide" data-ride="carousel">
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/Images/Ảnh2.png" alt="banner 1" class="img-header">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Images/Ảnh3.png" alt="banner 2" class="img-header">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Images/Ảnh4.png" alt="banner 3" class="img-header">
+                        </div>
+                    </div>
+
+
+                </div><!--Carousel-->
+            </div>
+        </div>
+    </header>
     <div class="clearfix"></div>
     <nav class="navbar navbar-expand-md bg-custom navbar-dark">
+
+
+
         <!-- Brand -->
-        @Html.ActionLink("Menu", "Index", "NPL", null, new { @class = "navbar-brand navbar-brand-custom" })
+        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand navbar-brand-custom" })
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -22,45 +51,93 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse navbar-collapse-custom" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu dropdown-custom">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
-                </li>
+                @Html.Action("PartialNavbarItem", "Home")
             </ul>
-
             <ul class="navbar-nav">
+                @Html.Action("GiohangPartial", "GioHang")
+
+                @Html.Action("TaiKhoan", "NguoiDung")
+
                 <li class="nav-item">
-                    @Html.ActionLink("Log out", "Logout", "Admin", null, new { @class = "nav-link" })
+                    @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post, new { @class = "form-inline" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" name="txtTimkiem" class="form-control" placeholder="Search" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            Search
+                        </button>
+                    }
                 </li>
             </ul>
         </div>
     </nav>
+
+
+    <br />
+
+    @RenderBody()
+
     <div class="container body-content">
-        @RenderBody()
+
         <hr />
         <footer>
+
+
+
+            <section id="footer-bar" style="background-color:tomato">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3" style="padding-left: 25px; min-width:250px">
+                            <h4>Liên hệ</h4>
+                            <ul class="contact">
+                                <li>
+                                    Địa chỉ: 475A Điện Biên Phủ
+                                </li>
+                                <li>
+                                    SĐT: 38456123
+                                </li>
+                            </ul>
+                        </div>
+                        @*Fanpage Facebook*@
+                        <div class="col-4" style="min-width:250px">
+                            <h4>Kết nối với chúng tôi</h4>
+                            <div style="height:auto; width:inherit" class="fb-page icon-repeat" data-href="https://www.facebook.com/NPL-583877955305428/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/NPL-583877955305428/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/NPL-583877955305428/">NPL</a></blockquote></div>
+
+                        </div>
+                        @*Zalo chat*@
+                        <div class="zalo-chat-widget " data-oaid="2443317400706361226" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="1" data-width="350" data-height="420"></div>
+                        <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+                        @*Maps*@
+                        <div class="col-5" style="min-width:250px">
+                            <h4>Trải nghiệm trực tiếp</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123600824663!2d106.71265711449475!3d10.801844361678471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2sHUTECH+University!5e0!3m2!1sen!2s!4v1522915287888" frameborder="1" style="border:medium; width:inherit; height:auto"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <p>&copy; @DateTime.Now.Year - Đồ án môn học Lập trình web</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/otherscript")
     @RenderSection("scripts", required: false)
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
 </body>
 </html>

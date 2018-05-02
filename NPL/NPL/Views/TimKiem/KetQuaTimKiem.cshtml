@@ -1,20 +1,24 @@
-﻿@using NPL.Models
-@model List<MonAn>
+﻿
+@using PagedList.Mvc;
+@using PagedList;
+
+@model IPagedList<NPL.Models.MonAn>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "KetQuaTimKiem";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <section class="container">
     <div class="row justify-content-center">
         <div class="col-12">
             <h4 class="title text-center">
-                <span class="pull-left"><span class="text"><span class="line">CÁC MÓN <strong>MỚI</strong></span></span></span>
+                <span class="pull-left"><span class="text"><span class="line">Kết quả tìm kiếm</span></span></span>
             </h4>
 
             <div class="row">
-                @foreach (MonAn item in Model)
+                @foreach (var item in Model)
                 {
                     <div class="col-md-4 col-sm-12">
                         <a class="item-name" href="@Url.Action("Details", "Home", new { id = item.IDMonAn })">
@@ -36,16 +40,15 @@
 
     <hr />
 </section>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="fb-like" data-href="@Url.Content("http://npl.somee.com/")" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div>
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+            <div class="MenuTrang">
+                @Html.PagedListPager(Model, page => Url.Action("KetQuaTimKiem", new { page = page, @tukhoa = ViewBag.TK }))
+            </div>
+            <style>
+                .MenuTrang li {
+                    display: inline;
+                }
+            </style>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="fb-comments" data-href="@Url.Content("http://npl.somee.com/")" data-numposts="5"></div>
-        </div>
-    </div>
-</div>

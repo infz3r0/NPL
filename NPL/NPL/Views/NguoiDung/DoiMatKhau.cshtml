@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "DoiMatKhau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="main-content">
+    <div class=" row justify-content-center">
+        <div class="span6">
+            <h4 class="title"><span class="text"><strong>ĐỔI</strong> MẬT KHẨU</span></h4>
+            <form action="#" method="post" class="form-stacked">
+                <fieldset>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Email đăng nhập:</label>
+                        <div class="controls">
+                            <input type="email" name="Email" class="form-control form-control-static" style="max-width:100%" required>
+                            <h6 style="color:red; font-size:13px">
+                                <td>
+                                    @ViewData["Loi1"]
+                                </td>
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Mật khẩu mới:</label>
+                        <div class="controls">
+                            <input type="password" name="MatKhauMoi" class="form-control form-control-static" style="max-width:100%" required>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:17px">
+                        <label class="control-label">Nhập lại mật khẩu mới:</label>
+                        <div class="controls">
+                            <input type="password" name="NhapLaiMatKhauMoi" class="form-control form-control-static" style="max-width:100%" required>
+                            <h6 style="color:red; font-size:13px">
+                                <td>
+                                    @ViewData["Loi2"]
+                                </td>
+                            </h6>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="actions"><input tabindex="6" class="btn btn-outline-info btn-block btn-lg" type="submit" value="Đổi mật khẩu" style="max-width:100%"></div>
+                </fieldset>
+              </form>
+        </div>
+     </div>
+</section>
+
